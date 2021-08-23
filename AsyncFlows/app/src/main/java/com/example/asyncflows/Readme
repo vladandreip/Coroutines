@@ -1,0 +1,12 @@
+Flows: something like observer patterns in context of coroutines done in ASYNC way
+A flow = stream of values that are async computed
+Builder: flow {  }
+emit(value): emits a value to the listener
+collect{} - receives the value that the flow is transmitting. The value doesn't transmit until we don't call collect on that flow
+
+Flows are cold: the code does not run until the collect function is called
+
+Cancellation: a flow cannot cancel by itself -> cancelled when the containing coroutine cancels
+
+Operators: take an input, transform it and provide and output flow. Operators are cold.
+Operators are not suspending functions = registered operations on the flow that are applied when the flow becomes active
