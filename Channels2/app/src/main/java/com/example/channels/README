@@ -1,0 +1,6 @@
+Channel: queue of data
+
+-We have a process that puts data in the channel and other processes that takes the data from channel and interprets it
+-Coroutines can async put information send(data)
+-Another coroutine can blockingly get data receive()
+-Channel is close when no elements
